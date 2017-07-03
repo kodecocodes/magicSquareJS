@@ -39,19 +39,9 @@ class MagicSquareValidator {
       }
     }
 
-    if (elementSet.size != max - min + 1) {
-      return false;
-    }
-
-    if (Math.min( ...elementSet ) != min) {
-      return false;
-    }
-
-    if (Math.max( ...elementSet ) != max) {
-      return false;
-    }
-
-    return true;
+    return elementSet.size == (max - min + 1)
+      && Math.min( ...elementSet ) == min
+      && Math.max( ...elementSet ) == max;
   }
 }
 
