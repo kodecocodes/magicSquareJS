@@ -57,7 +57,7 @@ class MagicSquareValidator {
     return true;
   }
 
-    /**
+  /**
    * 
    * @param {number[][]} array 
    * @param {number} target 
@@ -72,7 +72,7 @@ class MagicSquareValidator {
   }
 
 
-    /**
+  /**
    * 
    * @param {number[][]} square 
    * @param {number} target 
