@@ -20,7 +20,7 @@ function endEditPreMode() {
   const parent = this.parentElement;
   var preElement = document.createElement("pre");
   preElement.textContent = this.value;
-  preElement.id = "square-panel";
+  preElement.id = "magic-square-display";
   preElement.className = "flex-item";
   preElement.addEventListener("click", enterEditPreMode);
   parent.replaceChild(preElement, this);
