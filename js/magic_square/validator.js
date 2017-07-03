@@ -5,7 +5,6 @@ class MagicSquareValidator {
    * @returns {bool}
    */
   static checkArrayIsMagicSquare(array) {
-    // TODO
     if (!MagicSquareValidator._checkSquare(array)) {
       return false;
     }
