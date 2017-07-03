@@ -5,25 +5,13 @@ class MagicSquareValidator {
    * @returns {bool}
    */
   static checkArrayIsMagicSquare(array) {
-    if (!MagicSquareValidator._checkSquare(array)) {
-      return false;
-    }
-    if (!MagicSquareValidator._checkRange(array, 1, array.length * array.length)) {
-      return false;
-    }
     const target = array[0].reduce((acc, cur) => acc + cur, 0);
-    if (!MagicSquareValidator._checkRowSums(array, target)) {
-      return false;
-    }
-    if (!MagicSquareValidator._checkColumnSums(array, target)) {
-      return false;
-    }
-    if (!MagicSquareValidator._checkColumnSums(array, target)) {
-      return false;
-    }
-    if (!MagicSquareValidator._checkDiagonals(array, target)) {
-      return false;
-    }
+    return MagicSquareValidator._checkSquare(array)
+      && MagicSquareValidator._checkRange(array, 1, array.length * array.length)
+      && MagicSquareValidator._checkRowSums(array, target)
+      && MagicSquareValidator._checkColumnSums(array, target)
+      && MagicSquareValidator._checkColumnSums(array, target)
+      && MagicSquareValidator._checkDiagonals(array, target);
   }
 
   /**
