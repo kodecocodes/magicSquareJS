@@ -24,5 +24,28 @@ function endEditPreMode() {
   preElement.className = "flex-item";
   preElement.addEventListener("click", enterEditPreMode);
   parent.replaceChild(preElement, this);
+  validateMagicSquare();
+}
+
+function validateMagicSquare() {
+  const squareString = document.getElementById("magic-square-display").textContent;
+  const validationLabel = document.getElementById("validation");
+  if (/\S/.test(squareString)) {
+    // string is not empty and not just whitespace
+    validationLabel.classList.remove("hidden");
+
+    const square = Square.fromString(squareString);
+    if (square.isMagic()) {
+      validationLabel.textContent = "This is a magic square!";
+      validationLabel.classList.remove("invalid");
+      validationLabel.classList.add("valid");
+    } else {
+      validationLabel.textContent = "This is not a magic square.";
+      validationLabel.classList.remove("valid");
+      validationLabel.classList.add("invalid");
+    }    
+  } else {
+    validationLabel.classList.add("hidden");
+  }
 }
 
