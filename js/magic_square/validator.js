@@ -6,7 +6,9 @@ class MagicSquareValidator {
    */
   static checkArrayIsMagicSquare(array) {
     // TODO
-    return false;
+    if (!MagicSquareValidator._checkSquare(array)) {
+      return false;
+    }
   }
 
   /**
