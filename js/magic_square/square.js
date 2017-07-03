@@ -45,8 +45,7 @@ class Square {
    * @return {bool}
    */
   isMagic() {
-    // TODO
-    return false;
+    return MagicSquareValidator.checkArrayIsMagicSquare(this.store);
   }
 }
 
