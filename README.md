@@ -4,3 +4,8 @@ magicSquareJS is a simple JavaScript library and HTML page that generates and va
 
 For more information about magic squares, check out [Wikipedia](https://en.wikipedia.org/wiki/Magic_square).
 
+This project is maintained by teamWYXZ:
+- Will
+- Yasmin
+- Xanthe
+- Zack
