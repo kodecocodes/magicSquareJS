@@ -50,6 +50,25 @@ function validateMagicSquare() {
 }
 
 
+/**
+ * 
+ * @param {Event} event 
+ */
+function performMagicSquareGeneration(event) {
+  event.preventDefault();
+  const inputElement = document.getElementById("magic-square-size");
+  const outputElement = document.getElementById("magic-square-display");
+  const order = Number(inputElement.value);
+  try {
+    const ms = MagicSquareGenerator.generateMagicSquare(order);
+    outputElement.textContent = ms.toString();
+    validateMagicSquare();
+  } catch (e) {
+    alert("Unable to generate magic square for that order.");
+    console.log(e);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", event => {
   const outputElement = document.getElementById("magic-square-display");
   outputElement.addEventListener("click", enterEditPreMode);
