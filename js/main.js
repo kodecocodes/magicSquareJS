@@ -72,5 +72,14 @@ function performMagicSquareGeneration(event) {
 document.addEventListener("DOMContentLoaded", event => {
   const outputElement = document.getElementById("magic-square-display");
   outputElement.addEventListener("click", enterEditPreMode);
+
+  const inputElement = document.getElementById("magic-square-size");
+  const generateButton = document.getElementById("magic-square-generate-button");
+  generateButton.addEventListener("click", performMagicSquareGeneration);
+  inputElement.addEventListener("keyup", event => {
+    if (event.code == "Enter") {
+      performMagicSquareGeneration(event);
+    }
+  });
 });
 
