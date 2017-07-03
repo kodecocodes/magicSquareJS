@@ -38,7 +38,7 @@ class MagicSquareGenerator {
     const n_squared = order * order;
     for (var i = 0; i < order; i++) {
       for (var j = 0; j < order; j++) {
-        if (((i + 1) % 4) / 2 == ((j + 1) % 4) / 2) {
+        if (Math.floor(((i + 1) % 4) / 2) == Math.floor(((j + 1) % 4) / 2)) {
           square[i][j] = n_squared + 1 - index;
         } else {
           square[i][j] = index;
