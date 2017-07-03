@@ -35,4 +35,31 @@ class Utils {
                 .map(el => Number(el));
     });
   }
+
+  /**
+   * 
+   * @param {number[][]} array
+   * @return {string}
+   */
+  static render2DArray(array) {
+    const max = Math.max(...array.map(row => Math.max(...row)));
+    const numChars = Math.ceil(Math.log10(max + 1));
+
+    return array.map(row => {
+      return row.map(el => Utils._pad(el, numChars, " ")).join(" ")
+    }).join("\n");
+  }
+
+  /**
+   * 
+   * @param {number} n 
+   * @param {number} width 
+   * @param {string}} z 
+   * @return {string}
+   */
+  static _pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  }
 }
