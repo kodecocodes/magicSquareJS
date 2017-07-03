@@ -56,5 +56,19 @@ class MagicSquareValidator {
 
     return true;
   }
+
+    /**
+   * 
+   * @param {number[][]} array 
+   * @param {number} target 
+   * @return bool
+   */
+  static _checkRowSums(array, target) {
+    return array.reduce((previousValue, row) => {
+      return previousValue && (row.reduce((cumulativeTotal, value) => {
+        return cumulativeTotal + value;
+      }, 0)) == target;
+    }, true);
+  }
 }
 
