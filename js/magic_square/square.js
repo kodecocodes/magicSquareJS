@@ -4,7 +4,7 @@ class Square {
    * @param {number} size 
    */
   constructor(size) {
-    // TODO
+    this.store = Utils.prepopulate2DArray(size, size, 0);
   }
 
   /**
@@ -13,8 +13,7 @@ class Square {
    * @return {Square}
    */
   static fromString(string) {
-    // TODO
-    return new Square(1);
+    return Square.fromArray(Utils.extract2DArrayFromString(string));
   }
 
   /**
@@ -23,8 +22,16 @@ class Square {
    * @return {Square}
    */
   static fromArray(array) {
-    // TODO
-    return new Square(1);
+    const numberRows = array.length;
+    for (var row of array) {
+      if(row.length != numberRows) {
+        console.log("This array is not square");
+        return null;
+      }
+    }
+    var square = new Square(numberRows);
+    square.store = array;
+    return square;
   }
 
   /**
