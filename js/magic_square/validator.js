@@ -22,5 +22,36 @@ class MagicSquareValidator {
       return previousValue && (rowCount == currentValue.length);
     }, true);
   }
+
+  /**
+   * 
+   * @param {number[][]} array 
+   * @param {number} min 
+   * @param {number} max 
+   * @return {bool}
+   */
+  static _checkRange(array, min, max) {
+    var elementSet = new Set();
+
+    for (var row of array) {
+      for (var element of row) {
+        elementSet.add(element);
+      }
+    }
+
+    if (elementSet.size != max - min + 1) {
+      return false;
+    }
+
+    if (Math.min( ...elementSet ) != min) {
+      return false;
+    }
+
+    if (Math.max( ...elementSet ) != max) {
+      return false;
+    }
+
+    return true;
+  }
 }
 
