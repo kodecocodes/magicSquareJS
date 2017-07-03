@@ -25,6 +25,7 @@ class MagicSquareValidator {
     if (!MagicSquareValidator._checkDiagonals(array, target)) {
       return false;
     }
+    return true;
   }
 
   /**
