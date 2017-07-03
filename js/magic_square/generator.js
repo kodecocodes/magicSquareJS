@@ -34,8 +34,10 @@ class MagicSquareGenerator {
    * @return {number[][]} 
    */
   static _doublyEvenMagicSquare(order) {
-    //TODO
-    return [[1]];
+    var square = Utils.prepopulate2DArray(order, order, 0);
+    const n_squared = order * order;
+
+    return square;
   }
 
   /**
