@@ -38,8 +38,7 @@ class Square {
    * @return {string}
    */
   toString() {
-    // TODO
-    return "";
+    return Utils.render2DArray(this.store);
   }
 
   /**
