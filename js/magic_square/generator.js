@@ -24,8 +24,26 @@ class MagicSquareGenerator {
    * @return {number[][]}
    */
   static _oddMagicSquare(order) {
-    //TODO
-    return [[1]];
+    const n_squared = order * order;
+    var i = 0;
+    var j = Math.floor(order / 2);
+    var square = Utils.prepopulate2DArray(order, order, 0);
+
+    for(var k = 1; k <= n_squared; k++) {
+      square[i][j] = k;
+      i = i - 1;
+      j = j + 1;
+
+      if (k % order == 0) {
+        i = i + 2;
+        j = j - 1;
+      } else if (j == order) {
+        j = j - order;
+      } else if (i < 0) {
+        i = i + order;
+      }
+    }
+    return square;
   }
 
   /**
