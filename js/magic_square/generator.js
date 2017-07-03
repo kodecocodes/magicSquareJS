@@ -5,8 +5,10 @@ class MagicSquareGenerator {
    * @return {number[][]}
    */
   static generateMagicSquare(order) {
-    if (order == 2 || order < 1) {
-      throw "A magic square doesn't exist for that order";
+    if (order == 2) {
+      throw "You can't create a magic square of order 2—go on—try it!";
+    } else if (order < 1) {
+      throw "Please supply a positive integer.";
     }
     switch (order % 4) {
       case 0:
