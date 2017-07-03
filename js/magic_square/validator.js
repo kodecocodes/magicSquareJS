@@ -70,5 +70,22 @@ class MagicSquareValidator {
       }, 0)) == target;
     }, true);
   }
+
+
+    /**
+   * 
+   * @param {number[][]} square 
+   * @param {number} target 
+   * @return bool
+   */
+  static _checkColumnSums(square, target) {
+    const zip = (arr, ...arrs) => {
+      return arr.map((val, i) => arrs.reduce((a, arr) => [...a, arr[i]], [val]));
+    }
+    const colSums = square.reduce((cumulativeTotal, row) => {
+      return zip(cumulativeTotal, row).map(res => res[0] + res[1]);
+    }, Utils.prepopulate1DArray(square.length, 0));
+    return colSums.reduce((res, colSum) => res && (colSum == target), true)
+  }
 }
 
