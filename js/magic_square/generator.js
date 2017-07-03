@@ -34,7 +34,7 @@ class MagicSquareGenerator {
       i = i - 1;
       j = j + 1;
 
-      if (k % order == 0) {
+      if (k % order === 0) {
         i = i + 2;
         j = j - 1;
       } else if (j == order) {
