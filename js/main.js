@@ -49,3 +49,9 @@ function validateMagicSquare() {
   }
 }
 
+
+document.addEventListener("DOMContentLoaded", event => {
+  const outputElement = document.getElementById("magic-square-display");
+  outputElement.addEventListener("click", enterEditPreMode);
+});
+
