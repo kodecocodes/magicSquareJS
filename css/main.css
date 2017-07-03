@@ -116,6 +116,26 @@ input {
   text-decoration: none;
 }
 
+pre {
+    background-color: #eee;
+    padding: 10px 20px;
+}
+
+div#validation {
+    padding: 10px 0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+div#validation.valid {
+    background-color: green;
+}
+
+div#validation.invalid {
+    background-color: red;
+}
 
 
 
