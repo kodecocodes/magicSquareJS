@@ -75,7 +75,18 @@ section.box {
     margin: 10px auto;
 }
 
+textarea {
+    font-family: monospace;
+    font-size: 1.2em;
+    border: solid 1px #eee;
+    margin: 5px;
+}
 
+input {
+    padding: 0.5em;
+    text-align: center;
+    width: 3em;
+}
 
 
 
