@@ -19,6 +19,12 @@ class MagicSquareValidator {
     if (!MagicSquareValidator._checkColumnSums(array, target)) {
       return false;
     }
+    if (!MagicSquareValidator._checkColumnSums(array, target)) {
+      return false;
+    }
+    if (!MagicSquareValidator._checkDiagonals(array, target)) {
+      return false;
+    }
   }
 
   /**
