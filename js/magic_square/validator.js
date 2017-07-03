@@ -12,6 +12,13 @@ class MagicSquareValidator {
     if (!MagicSquareValidator._checkRange(array, 1, array.length * array.length)) {
       return false;
     }
+    const target = array[0].reduce((acc, cur) => acc + cur, 0);
+    if (!MagicSquareValidator._checkRowSums(array, target)) {
+      return false;
+    }
+    if (!MagicSquareValidator._checkColumnSums(array, target)) {
+      return false;
+    }
   }
 
   /**
