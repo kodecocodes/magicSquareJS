@@ -94,5 +94,22 @@ class MagicSquareValidator {
     }, Utils.prepopulate1DArray(square.length, 0));
     return colSums.reduce((res, colSum) => res && (colSum == target), true)
   }
+
+
+  /**
+   * 
+   * @param {number[][]} square 
+   * @param {number} target 
+   */
+  static _checkDiagonals(square, target) {
+    var leadingDiagonalSum = 0;
+    var trailingDiagonalSum = 0;
+    const size = square.length;
+    for(var i = 0; i < size; i++) {
+      leadingDiagonalSum += square[i][i];
+      trailingDiagonalSum += square[i][size - 1 - i];
+    }
+    return leadingDiagonalSum == target && trailingDiagonalSum == target;
+  }
 }
 
