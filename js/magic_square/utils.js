@@ -21,4 +21,18 @@ class Utils {
     return Array.apply(null, Array(rows))
                 .map(_ => Utils.prepopulate1DArray(columns, value));
   }
+
+  /**
+   * 
+   * @param {string} str 
+   * @return {number[][]}
+   */
+  static extract2DArrayFromString(str) {
+    var rows = str.split(/\r\n|\r|\n/);
+    return rows.map(row => {
+      return row.split(/\s+/)
+                .filter(el => el != "")
+                .map(el => Number(el));
+    });
+  }
 }
