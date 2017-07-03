@@ -9,6 +9,9 @@ class MagicSquareValidator {
     if (!MagicSquareValidator._checkSquare(array)) {
       return false;
     }
+    if (!MagicSquareValidator._checkRange(array, 1, array.length * array.length)) {
+      return false;
+    }
   }
 
   /**
